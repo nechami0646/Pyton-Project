@@ -1,0 +1,11 @@
+<h1>רשימת המשימות שלי</h1>
+<ul>
+    {% for task in tasks %}
+        <li>
+            <strong>{{ task.title }}</strong> - סטטוס: {{ task.get_status_display }}
+            (יעד: {{ task.due_date }})
+        </li>
+    {% empty %}
+        <li>אין משימות כרגע בצוות שלך.</li>
+    {% endfor %}
+</ul>
